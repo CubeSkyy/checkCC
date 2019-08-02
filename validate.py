@@ -10,6 +10,7 @@ def validate_telefone(n_telefone):
 
 
 def validate_niss(niss):
+    niss = str(niss)
     if not niss.isdigit() or len(niss) != 11:
         return False
     if niss[0] != '1' and niss[0] != '2':
@@ -44,6 +45,7 @@ def validate_nif(nif):
 
 
 def validate_bi(bi):
+    bi = str(bi)
     if re.match(r'[0-9]{6,8}(\s*|-)[0-9]', bi):
         bi = bi.replace('-', '')
 
@@ -56,6 +58,7 @@ def validate_bi(bi):
 
 
 def validate_cc(cc):
+    cc = str(cc)
     if re.match(r'[0-9]{8}(\s*|-)[0-9][a-zA-Z0-9]{3}', cc):
         cc = cc.replace('-', '').replace(' ', '')
         cc = list(cc)
